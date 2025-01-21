@@ -1,0 +1,32 @@
+.main {
+    position: relative;
+    width: 100%;
+}
+
+.test-one {
+    height: 100px;
+    background-color: greenyellow;
+}
+
+.test-one > div {
+    width: calc(100% / 3);
+    height: 100%;
+    background-color: aqua;
+    position: relative;
+    float: left;
+}
+
+.test-two {
+    height: 100px;
+    background-color: greenyellow;
+}
+
+.test-two > div {
+    width: calc(100% / 3);
+    height: 100%;
+    background-color: aqua;
+    position: relative;
+    float: left;
+}
+
+

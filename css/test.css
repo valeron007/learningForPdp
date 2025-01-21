@@ -1,0 +1,21 @@
+/*relative*/
+/*
+h2 {
+    position: relative;
+    top: 10px;
+    left: -10px;
+}
+*/
+/*absolute*/
+h2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.window-div {
+    position: fixed;
+    width: 200px;
+    height: 100px;
+    background-color: greenyellow;
+}

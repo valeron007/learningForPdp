@@ -1,0 +1,179 @@
+body {
+    /*display: flex;*/
+}
+
+.grid-container {
+    margin-top: 10px;
+}
+
+.exam-one {
+    /*width: 100%;*/
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.grid-example-one {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: auto auto;
+}
+
+.grid-example-one-elem {
+    background-color: #5A8CF1;
+}
+
+.exam-two {
+    margin: 10px;
+    /*width: 100%;*/
+    display: flex;
+}
+
+.grid-example-two {
+    margin-bottom: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 200px auto;
+    grid-auto-rows: 100px;
+}
+
+.grid-example-two-elem {
+    background-color: #6AE765;
+}
+
+
+/*example3*/
+
+.grid-example-three {
+    min-height: 50vh;
+    display: grid;
+    gap: 10px;
+    grid-auto-flow: column;
+    grid-template-columns: auto;
+    grid-template-rows: 300px;
+}
+
+.grid-example-three-elem {
+    background-color: #5A8CF1;
+}
+
+.grid-example-four {
+    min-height: 50vh;
+    display: grid;
+    grid-template-columns: 25% auto 15%;
+    grid-template-areas:
+        "menu catalog advertisement"
+        "menu catalog advertisement"
+        "menu catalog ."
+        "menu order order"
+;
+}
+
+.menu {
+    grid-area: menu;
+    background-color: #666666;
+}
+
+.catalog {
+    grid-area: catalog;
+    background-color: #aaeeff;
+}
+
+.advertisement {
+    grid-area: advertisement;
+    background-color: greenyellow;
+}
+
+.order {
+    grid-area: order;
+    background-color: brown;
+}
+
+.grid-example-five {
+    display: grid;
+    min-height: 50vh;
+    grid-template-areas:
+/*    "a a a"*/
+/*    "b b c"*/
+/*    "b b c"    */
+/*;*/
+/*"a a c"*/
+/*"b b c"*/
+/*"b b c"*/
+/*    "b b a"*/
+/*    "b b c"*/
+/*    "b b c"*/
+    "a a c"
+    "b b c"
+    ". . c"
+}
+
+.grid-a {
+    background-color: #5A8CF1;
+    grid-area: a;
+}
+
+.grid-b {
+    background-color: greenyellow;
+    grid-area: b;
+}
+
+.grid-c {
+    background-color: #6AE765;
+    grid-area: c;
+}
+
+.grid-example-six {
+    display: grid;
+    /* Три колонки */
+    grid-template-columns: auto auto auto;
+    /* Два ряда */
+    grid-template-rows: auto auto;
+    /* Автоматическое размещение в ряд */
+    grid-auto-flow: row dense;
+    /*grid-auto-flow: row;*/
+    /* Отступы между ячейками */
+    gap: 20px;
+}
+
+.six-item {
+    background-color: #6AE765;
+}
+
+.item-3 {
+    /* Занимает один ряд и
+  растягивается на две колонки */
+    grid-column: span 2;
+}
+
+.grid-example-seven {
+    display: grid;
+    grid-template-columns: 150px auto 40%;
+    grid-template-rows: 200px 100px 50px 40px;
+    grid-template-areas:
+    "header header header"
+    "menu content content"
+    "menu content content"
+    "footer footer footer";
+    gap: 20px;
+    background-color: #6AE765;
+}
+
+.seven-item {
+    background-color: blueviolet;
+}
+
+.seven-item-1 {
+    grid-area: header;
+}
+
+.seven-item-2 {
+    grid-area: menu;
+}
+
+.seven-item-3 {
+    grid-area: content;
+}
+
+.seven-item-4 {
+    grid-area: footer;
+}

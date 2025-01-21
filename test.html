@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/test.css">
+    <script src="js/prism.js"></script>
+</head>
+<body>
+<div contentEditable id="elem">Отредактируй <b>меня</b>, пожалуйста</div>
+<div id="highlight-demo">
+
+</div>
+    <script>
+        let observer = new MutationObserver(mutationRecords => {
+            console.log(mutationRecords); // console.log(изменения)
+        });
+
+        // наблюдать за всем, кроме атрибутов
+        observer.observe(elem, {
+            childList: true, // наблюдать за непосредственными детьми
+            subtree: true, // и более глубокими потомками
+            characterDataOldValue: true // передавать старое значение в колбэк
+        });
+    //     подсветка
+
+        let observerLanguage = new MutationObserver(mutations => {
+
+            for(let mutation of mutations) {
+                // проверим новые узлы, есть ли что-то, что надо подсветить?
+
+                for(let node of mutation.addedNodes) {
+                    // отслеживаем только узлы-элементы, другие (текстовые) пропускаем
+                    if (!(node instanceof HTMLElement)) continue;
+
+                    // проверить, не является ли вставленный элемент примером кода
+                    if (node.matches('pre[class*="language-"]')) {
+                        //Prism.highlightElement(node);
+                        node.style.color = 'red';
+                    }
+
+                    // или, может быть, пример кода есть в его поддереве?
+                    for(let elem of node.querySelectorAll('pre[class*="language-"]')) {
+                        //Prism.highlightElement(elem);
+                        elem.style.color = 'green';
+                    }
+                }
+            }
+
+        });
+
+        let demoElem = document.getElementById('highlight-demo');
+
+        observerLanguage.observe(demoElem, {childList: true, subtree: true});
+
+        // динамически вставить содержимое как фрагменты кода
+        demoElem.innerHTML = `Фрагмент кода ниже:
+          <pre class="language-javascript"><code> let hello = "world!"; </code></pre>
+          <div class="language-div">Ещё один:</div>
+          <div>
+            <pre class="language-css"><code>.class { margin: 5px; } </code></pre>
+          </div>
+        `;
+
+        localStorage.setItem('test', 1);
+        console.log(localStorage.getItem('test'));
+        
+    </script>
+</body>
+</html>

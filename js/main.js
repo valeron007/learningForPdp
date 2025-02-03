@@ -1,6 +1,10 @@
+import Slider from "./slider/slider.js";
+import Carousel from "./carousel/carousel.js";
 
-console.log('1111');
+if (!customElements.get('wcia-slider')) {
+    customElements.define('wcia-slider', Slider);
+}
 
-function newFunction() {
-    console.log('new');
+if (!customElements.get('wcia-photo-carosel')) {
+    customElements.define('wcia-photo-carosel', Carousel);
 }

@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css/slider/slider.css">
+    <link rel="stylesheet" href="css/carousel/carousel.css">
 </head>
-<body>
 
+<body>
+    <input type="date">
+    <random-el>
+        <h1>Hi</h1>
+    </random-el>
+    <!-- <wcia-slider backgroundColor="#0000ff" value="10"></wcia-slider> -->
+    <wcia-slider></wcia-slider>
+
+    <wcia-photo-carosel title="Photo" author="Valeron" photos="images/borisov.jpeg, images/jack.jpeg,images/niro.jpeg,images/48114.jpg">
+
+    </wcia-photo-carosel>
 </body>
+<script type="module" src="js/main.js">
+    customElements.define('auxo-element', class extends HTMLElement {}); console.log('111');
+</script>
+
+
 </html>

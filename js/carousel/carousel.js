@@ -47,5 +47,4 @@ export default class Carousel extends HTMLElement {
 
         this.showPhoto();
     }
-
 }

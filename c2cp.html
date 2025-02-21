@@ -14,15 +14,17 @@
         <h1>Hi</h1>
     </random-el>
     <!-- <wcia-slider backgroundColor="#0000ff" value="10"></wcia-slider> -->
-    <wcia-slider></wcia-slider>
+    <wcia-slider backgroundcolor="#0000ff" value="10"></wcia-slider>
 
     <wcia-photo-carosel title="Photo" author="Valeron" photos="images/borisov.jpeg, images/jack.jpeg,images/niro.jpeg,images/48114.jpg">
 
     </wcia-photo-carosel>
+    <!-- <my-custom-tag title="Valeron"></my-custom-tag> -->
+    <cleanup-component>1</cleanup-component>
+    <button onclick="document.body.removeChild(document.querySelector('cleanup-component'))">remove</button>
+
 </body>
 <script type="module" src="js/main.js">
-    customElements.define('auxo-element', class extends HTMLElement {}); console.log('111');
+    customElements.define('auxo-element', class extends HTMLElement {});
 </script>
-
-
 </html>

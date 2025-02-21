@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
     <h1>c3</h1>
+    <cleanup-component>1</cleanup-component>
+    <button onclick="document.body.removeChild(document.querySelector('cleanup-component'))">remove</button>
 
-    <script>
-        const apiKey = 'AIzaSyC1PLW9BYYYt1A-5UBqMFpIurZVQUI_xXk';
-        const url = `https://poly.googleapis.com/v1/assets?keywords=parrot&apiKey=${apiKey}`;
-
-        const request = new XMLHttpRequest();
-        request.open('GET', url, true);
-        request.addEventListener('load', (event) => {
-            console.log(JSON.parse(event.target.respone));
-        });
-        request.send();
-        
+    <script type="module" src="js/cleanup.js">
     </script>
 </body>
+
 </html>

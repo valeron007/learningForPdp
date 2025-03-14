@@ -1,5 +1,5 @@
 import {CalculatorAdapter} from "./calculatoradapter.js"
-import { Calculator } from './calculator.js';
+import {Calculator} from './calculator.js';
 
 const calcAdapter = new CalculatorAdapter();
 const sumAdapter = calcAdapter.operation(2, 2, "multiplication");

@@ -1,3 +1,4 @@
+import { NewCalculator } from './newcalculator.js';
 export class CalculatorAdapter {
   constructor() {
     this.calculator = new NewCalculator();

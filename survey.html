@@ -1,10 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <!-- ... -->
+    <!-- SurveyJS Form Library resources -->
+    <link  href="https://unpkg.com/survey-core/survey-core.min.css" type="text/css" rel="stylesheet">
+    <script src="https://unpkg.com/survey-core/survey.core.min.js"></script>
+    <script src="https://unpkg.com/survey-js-ui/survey-js-ui.min.js"></script>
+
+    <!-- (Optional) Predefined theme configurations -->
+    <script src="https://unpkg.com/survey-core/themes/index.min.js"></script>
+
+    <!-- Survey Creator resources -->
+    <link  href="https://unpkg.com/survey-creator-core/survey-creator-core.min.css" type="text/css" rel="stylesheet">
+    <script src="https://unpkg.com/survey-creator-core/survey-creator-core.min.js"></script>
+    <script src="https://unpkg.com/survey-creator-js/survey-creator-js.min.js"></script>
+    <!-- localization   -->
+    <script src="https://unpkg.com/survey-creator-core/survey-creator-core.i18n.min.js"></script>
+    <script src="https://unpkg.com/survey-core/survey.i18n.min.js"></script>
+
+
+    <script>
+        const creatorOptions = {
+            autoSaveEnabled: true,
+            collapseOnDrag: true,
+            showTranslationTab: true,
+        };
+
+        //SurveyCreatorCore.editorLocalization.defaultLocale = 'ru';
+        SurveyCreator.editorLocalization.defaultLocale = "fr"
+        const creator = new SurveyCreator.SurveyCreator(creatorOptions);
+        creator.locale = "customlocale";
+        console.log(creator)
+
+        document.addEventListener("DOMContentLoaded", function() {
+            creator.render(document.getElementById("surveyCreator"));
+        });
+    </script>
+    <!-- ... -->
 </head>
+
+
 <body>
-$END$
+<div id="surveyCreator" style="height: 100vh;"></div>
 </body>
-</html>
